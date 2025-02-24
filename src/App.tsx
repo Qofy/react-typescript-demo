@@ -7,6 +7,8 @@ import { Heading } from './component/Heading';
 import { Oscar } from './component/Oscar';
 import { Button } from './component/Button';
 
+import { Input } from './component/Input';
+
 function App() {
   const personName ={
     firstName: "Bruce",
@@ -39,6 +41,7 @@ function App() {
         <Heading>Oscar goes to Leonardo Dicpario!</Heading>
       </Oscar>
       <Button handleClick={(event, id) => console.log("Button Clicked",event,id)}/>
+        <Input value='' handleOnchange={(event) => console.log(event)}/>
     </div>
   );
 }

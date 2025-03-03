@@ -14,6 +14,7 @@ import { User } from './component/states/User';
 import { UserContextProvider } from './component/context/UserContext';
 import { Private } from './component/auth/Private';
 import { Profile } from './component/auth/Profile';
+import { List } from './component/Generic/List';
 function App() {
   const personName ={
     firstName: "Bruce",
@@ -57,6 +58,12 @@ function App() {
         <User/>
       </UserContextProvider>
       <Private isLoggedIn= {true} component={Profile}/>
+
+      <List items={[
+        {id: 1,first: "Bruce", last: "Wayne"},
+        {id: 2,first: "Clerk", last: "Tom"},
+        {id: 3,first:"Ellen", last: "Winson"}
+      ]} onClick={(item) => console.log(item)}/>
     </div>
   );
 }

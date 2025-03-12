@@ -15,11 +15,29 @@ import { UserContextProvider } from './component/context/UserContext';
 import { Private } from './component/auth/Private';
 import { Profile } from './component/auth/Profile';
 import { List } from './component/Generic/List';
+import { MyGreet } from './component/MyGreet';
+import { MyPerson } from './component/Myperson';
+import { fullName } from './component/Myperson';
+import { MyPersonList } from './component/MyPersonList';
 function App() {
   const personName ={
     firstName: "Bruce",
     lastName: "Wayne"
   }
+  const personList = [
+    {
+      first:"Kofi",
+      last:"Safo"
+    },
+    {
+      first:"Alex",
+      last: "Owusu" 
+    },
+    {
+      first:"Gyan",
+      last:"Justice"
+    }
+  ]
 
   const personNames = [
     {
@@ -64,6 +82,9 @@ function App() {
         {id: 2,first: "Clerk", last: "Tom"},
         {id: 3,first:"Ellen", last: "Winson"}
       ]} onClick={(item) => console.log(item)}/>
+    <MyGreet name="Safo Kofi Agyekum" num={5} isLoggin={false} isPaid={false}/>
+    <MyPerson fullName={fullName}/>
+    <MyPersonList name={personList}/>
     </div>
   );
 }
